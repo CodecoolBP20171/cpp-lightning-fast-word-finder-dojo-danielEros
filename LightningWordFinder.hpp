@@ -12,7 +12,7 @@ public:
         std::string longestWord = "";
         std::string currentWord = "";
         for(int i = 0; i<text.size(); i++){
-            if((text[i] > 64 && text[i] < 91) || (text[i] > 96 && text[i] < 123)){
+            if(isalpha(text[i])){
                 currentWord += text[i];
             } else {
                 if(longestWord.size() < currentWord.size()){
@@ -21,7 +21,7 @@ public:
                 currentWord = "";
             }
         }
-        return "Constantinopolitan";
+        return longestWord;
     }
 };
 #endif //CPP_LIGHTNING_FAST_WORD_FINDER_DOJO_LIGHTNINGWORDFINDER_HPP
